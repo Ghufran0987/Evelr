@@ -7,6 +7,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import SignUpModal from './SignUpModal';
+import { Link } from 'react-router-dom';
 const NavbarComponent = () => {
   const [showLoginModal, setLoginShowModal] = useState(false);
   const [showSignUpModal,setSignUpModal]=useState(false);
@@ -44,9 +45,9 @@ const NavbarComponent = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link className="nav-link active" aria-current="page" to='/messages'>
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
