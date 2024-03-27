@@ -1,12 +1,8 @@
 import React from "react";
-
-
 import Messages from "../views/Messages";
 
 const useSideNavRoutes = () => {
-  
   return [
-    
     {
       collapse: true,
       name: "Products",
@@ -14,7 +10,6 @@ const useSideNavRoutes = () => {
       state: "dashboardsCollapse",
       isView: true,
       views: [
-        
         {
           path: "/messages",
           name: "FAQs",
@@ -23,10 +18,9 @@ const useSideNavRoutes = () => {
           layout: "/admin",
           // isView: true,
           isTop: true,
-        }
-      ]
+        },
+      ],
     },
-   
   ];
 };
 export default useSideNavRoutes;

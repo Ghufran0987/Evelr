@@ -1,20 +1,19 @@
-import React from 'react';
-import Navbar from './component/Navbar'
-import Footer from './component/Footer';
-import { Route, Router, Routes } from 'react-router-dom';
-import IndexView from './views/IndexView';
-import Messages from './views/Messages';
-import AdminLayout from './layout/AdminLayout';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+
+// Pages
+import HomePage from "./views/home";
+import MessagePage from "./views/messages";
+import NotificationsPage from "./views/notifications";
+
 function App() {
   return (
     <Routes>
-      <Route path="/*" element={<AdminLayout />} />
-      <Route path="/" element={<IndexView />}>
-      </Route>
-      
+      <Route path="/" element={<HomePage />} />
+      <Route path="/messages" element={<MessagePage />} />
+      <Route path="/notifications" element={<NotificationsPage />} />
     </Routes>
   );
 }
-
 
 export default App;

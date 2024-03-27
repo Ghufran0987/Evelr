@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import LoginModal from './LoginModal'; // Import the ModalContent component
-import '../assets/css/style.css';
-import '../assets/css/global.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import flatpickr from 'flatpickr';
-import 'flatpickr/dist/flatpickr.min.css';
-import SignUpModal from './SignUpModal';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import LoginModal from "./LoginModal"; // Import the ModalContent component
+import "../assets/css/style.css";
+import "../assets/css/global.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
+import SignUpModal from "./SignUpModal";
+import { Link } from "react-router-dom";
 const NavbarComponent = () => {
   const [showLoginModal, setLoginShowModal] = useState(false);
-  const [showSignUpModal,setSignUpModal]=useState(false);
+  const [showSignUpModal, setSignUpModal] = useState(false);
   const handleLoginClose = () => {
     setLoginShowModal(false);
   };
@@ -45,30 +45,43 @@ const NavbarComponent = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to='/messages'>
+              <Link className="nav-link active" aria-current="page" to="/">
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" aria-current="page" to="/messages">
                 Messages
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="./notifications/notification.html">
+              <Link
+                className="nav-link"
+                aria-current="page"
+                to="/notifications"
+              >
                 Notifications
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" aria-current="page" to="/wishlist">
                 Wishlists
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="nav-btns">
-            
-          <a className="navbar-login-btn"  type="button" onClick={handleLoginShow}>Log In</a> {/* Button to trigger modal */}
-          {showLoginModal && <LoginModal handleClose={handleLoginClose} />} {/* Render modal when showModal is true */}
+            <a
+              className="navbar-login-btn"
+              type="button"
+              onClick={handleLoginShow}
+            >
+              Log In
+            </a>{" "}
+            {/* Button to trigger modal */}
+            {showLoginModal && (
+              <LoginModal handleClose={handleLoginClose} />
+            )}{" "}
+            {/* Render modal when showModal is true */}
             <a
               className="navbar-signup-btn"
               type="button"
@@ -76,7 +89,7 @@ const NavbarComponent = () => {
             >
               Sign Up
             </a>
-            {showSignUpModal &&<SignUpModal handleClose={handleSignupClose}/>}
+            {showSignUpModal && <SignUpModal handleClose={handleSignupClose} />}
           </div>
         </div>
 
@@ -154,10 +167,6 @@ const NavbarComponent = () => {
 };
 
 export default NavbarComponent;
-
-
-
-
 
 // const NavbarComponent = () => {
 //   const [showModal, setShowModal] = useState(false);
