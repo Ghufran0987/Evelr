@@ -5,14 +5,19 @@ import { Route, Router, Routes } from 'react-router-dom';
 import IndexView from './views/IndexView';
 import Messages from './views/Messages';
 import AdminLayout from './layout/AdminLayout';
+import NavbarComponent from './component/Navbar';
 function App() {
   return (
+    <>
+   
     <Routes>
-      <Route path="/*" element={<AdminLayout />} />
-      <Route path="/" element={<IndexView />}>
-      </Route>
+      <Route path="/*" element={<AdminLayout/>} />
+      <Route path='/' element={<IndexView/>}/>
       
     </Routes>
+  
+    </>
+    
   );
 }
 

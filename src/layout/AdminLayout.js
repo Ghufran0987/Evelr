@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Route, Router, Routes } from 'react-router-dom';
 import useRoutes from "../utils/routes"
+import NavbarComponent from '../component/Navbar';
+import Footer from '../component/Footer';
 
 function AdminLayout() {
     const routes = useRoutes();
@@ -61,10 +63,12 @@ function AdminLayout() {
       };
   return (
     <>
+    <NavbarComponent/>
       <Routes>
               {getRoutes(routes)}
               
-            </Routes>
+      </Routes>
+    <Footer/>
     </>
   );
 }

@@ -8,6 +8,23 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import SignUpModal from './SignUpModal';
 import { Link } from 'react-router-dom';
+import {
+  UncontrolledCollapse,
+  NavbarBrand,
+  Navbar,
+  NavItem,
+  NavLink,
+  Nav,
+  Container,
+  Row,
+  Col,
+  UncontrolledTooltip,
+  Button,
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from "reactstrap";
 const NavbarComponent = () => {
   const [showLoginModal, setLoginShowModal] = useState(false);
   const [showSignUpModal,setSignUpModal]=useState(false);
@@ -45,14 +62,15 @@ const NavbarComponent = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to='/messages'>
+              <NavLink className="nav-link active" aria-current="page" to='/' tag={Link}>
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink className="nav-link" to='/messages' tag={Link}>
                 Messages
-              </a>
+              </NavLink>
+              
             </li>
             <li className="nav-item">
               <a className="nav-link" href="./notifications/notification.html">
