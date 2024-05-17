@@ -3,6 +3,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import authReducer from './features/authSlice';
 import postReducer from './features/post/postSlice'
+import categoryReducer from './features/category/categorySlice'
 import notificationReducer from './features/notification/notificationSlice'
 const authPersistConfig = {
   key: 'auth',
@@ -12,11 +13,18 @@ const postPersistConfig = {
   key: 'post',
   storage: storage,
 };
+const categoryPersistConfig = {
+  key: 'category',
+  storage: storage,
+};
 const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
 const persistPostReducer=persistReducer(postPersistConfig,postReducer)
+const persistedCategoryReducer = persistReducer(categoryPersistConfig, categoryReducer);
+
 const rootReducer=combineReducers({
   auth: persistedAuthReducer,
   post:persistPostReducer,
+  category:persistedCategoryReducer,
   notification:notificationReducer 
 })
 

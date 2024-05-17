@@ -8,19 +8,19 @@ export const auth={
         return response;
     }
 }
-export const post={
-    getAll:async()=>{
-        const response=await api.get(`${URLs.GET_POST}`)
-        return response;
+export const post = {
+    getAll: async (category_id = null) => {
+      const queryParam = category_id ? `?category_id=${category_id}` : '';
+      const response = await api.get(`${URLs.GET_POST}${queryParam}`);
+      return response;
     },
-    getById:async({id})=>{
-        console.log(URLs.GET_POST+id)
-        const response=await api.get(`${URLs.GET_POST}/${id}`)
-        console.log(response)
-        return response.data
-    }
-}
-export const categories={
+    getById: async ({ id }) => {
+      const response = await api.get(`${URLs.GET_POST}/${id}`);
+      return response.data;
+    },
+  };
+  
+export const category={
     getAll:async()=>{
         const response=await api.get(`${URLs.GET_CATEGORY}`)
         return response.data;

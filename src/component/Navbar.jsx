@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../custom-hooks/useAuth';
 import { logOut } from '../redux-store/features/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import logo from '../assets/images/eve-logo-cropped.gif'
 import {
   UncontrolledCollapse,
   NavbarBrand,
@@ -59,7 +60,7 @@ const NavbarComponent = () => {
     <nav className="navbar navbar-expand-lg bg-light py-3">
       <div className="container">
         <a className="navbar-brand" href="#">
-          <img src="./assets/images/eve-logo-cropped.gif" alt="evelr logo" />
+          <img src={logo} alt="evelr logo" />
         </a>
         <button
           className="navbar-toggler"
