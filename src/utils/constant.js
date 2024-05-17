@@ -32,6 +32,7 @@ export const URLs = {
   
     //Documenets
     GET_POST: "post",
+    GET_CATEGORY:"categories",
     GET_DOCUMENT_BY_ID: "document",
     RECOMMENDED_DOCUMENTS: "/document/recommended_documents",
   

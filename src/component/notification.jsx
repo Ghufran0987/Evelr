@@ -8,7 +8,7 @@ const Notification = ({ open, message, type }) => {
   
     const notify = () => {
       if (type === "error") {
-        toast.success(message, {
+        toast.error(message, {
           position: toast.TOP_RIGHT,
           onClose: () => dispatch(isHideNotification(false)) // Wrap dispatch in a function
         });
