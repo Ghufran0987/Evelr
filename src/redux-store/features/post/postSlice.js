@@ -26,11 +26,7 @@ const postSlice = createSlice({
     postDetails: null,
     error: null,
   },
-  reducers: {
-    resetDetails:(state)=>{
-        state.postDetails=null
-    }
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getAllPost.pending, (state) => {
@@ -54,6 +50,5 @@ const postSlice = createSlice({
   },
 });
 
-export const{resetDetails}=postSlice.actions
 // export const { rest_post_detail } = postSlice.actions;
 export default postSlice.reducer;

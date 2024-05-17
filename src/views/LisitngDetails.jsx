@@ -20,9 +20,8 @@ const ListingDetails = () => {
     dispatch(getPostById(id));
   }, [id, dispatch]);
 
-  useEffect(() => {
-    console.log('Post Details:', postDetails);
-  }, [postDetails]);
+  console.log(postDetails);
+
   const increment = (id) => {
     const input = document.getElementById(id);
     input.value = parseInt(input.value) + 1;
@@ -99,7 +98,7 @@ const ListingDetails = () => {
           <div className="row">
             <div className="col-lg-7 pe-lg-3">
               <h2 className="sub-hd" style={{ marginTop: '40px', fontSize: '38px' }}>
-                {postDetails.title}
+                Salam Towers in Malir
               </h2>
               <h3 style={{ marginTop: '60px', fontSize: '30px', fontWeight: '500' }}>
                 About This Apartment

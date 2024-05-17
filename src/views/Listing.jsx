@@ -4,7 +4,6 @@ import star from '../assets/icons/star-fill.svg';
 import { useNavigate } from "react-router-dom";
 import Loader from "../component/Loader";
 import { getAllPost } from "../redux-store/features/post/postSlice";
-import { resetDetails } from "../redux-store/features/post/postSlice";
 import { useSelector,useDispatch } from "react-redux";
 function Listings() {
   let navigate = useNavigate();
@@ -18,7 +17,6 @@ function Listings() {
 
   useEffect(() => {
     dispatch(getAllPost());
-    dispatch(resetDetails())
   }, [dispatch]); // dependency array ensures this only runs once
   const handleLoadMore = () => {
     setIsLoading(true); // Set loading state to true
