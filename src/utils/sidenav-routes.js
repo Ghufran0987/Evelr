@@ -1,6 +1,12 @@
 import React from "react";
 import Messages from "../views/Messages";
 import ListingDetails from "../views/LisitngDetails";
+import PersonalInformation from "../views/My Profile/PersonalInformation";
+import MyReservation from "../views/My Profile/Reservation";
+import GiftCards from "../views/My Profile/GiftCard";
+import HelpSection from "../views/My Profile/HelpCenter";
+import Notifications from "../views/Notification";
+import BookingConfirmation from "../views/Booking/BookingConfirmation";
 const useSideNavRoutes = () => {
   return [
     {
@@ -15,6 +21,54 @@ const useSideNavRoutes = () => {
           name: "FAQs",
           miniName: "RS",
           component: <Messages />,
+          layout: "/admin",
+          isTop: true,
+        },
+        {
+          path: "/personal_information",
+          name: "FAQs",
+          miniName: "RS",
+          component: <PersonalInformation />,
+          layout: "/admin",
+          isTop: true,
+        },
+        {
+          path: "/my_reservations",
+          name: "FAQs",
+          miniName: "RS",
+          component: <MyReservation />,
+          layout: "/admin",
+          isTop: true,
+        },
+        {
+          path: "/notications",
+          name: "FAQs",
+          miniName: "RS",
+          component: <Notifications />,
+          layout: "/admin",
+          isTop: true,
+        },
+        {
+          path: "/booking_confirmation",
+          name: "FAQs",
+          miniName: "RS",
+          component: <BookingConfirmation />,
+          layout: "/admin",
+          isTop: true,
+        },
+        {
+          path: "/gift_card",
+          name: "FAQs",
+          miniName: "RS",
+          component: <GiftCards />,
+          layout: "/admin",
+          isTop: true,
+        },
+        {
+          path: "/help_center",
+          name: "FAQs",
+          miniName: "RS",
+          component: <HelpSection />,
           layout: "/admin",
           isTop: true,
         },
