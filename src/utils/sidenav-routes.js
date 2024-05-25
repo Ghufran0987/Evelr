@@ -7,6 +7,8 @@ import GiftCards from "../views/My Profile/GiftCard";
 import HelpSection from "../views/My Profile/HelpCenter";
 import Notifications from "../views/Notification";
 import BookingConfirmation from "../views/Booking/BookingConfirmation";
+import AccountSettings from "../views/My Profile/Account-Settings/AccountSettings";
+import Login_Security from "../views/My Profile/Account-Settings/Login";
 const useSideNavRoutes = () => {
   return [
     {
@@ -69,6 +71,22 @@ const useSideNavRoutes = () => {
           name: "FAQs",
           miniName: "RS",
           component: <HelpSection />,
+          layout: "/admin",
+          isTop: true,
+        },
+        {
+          path: "/account_settings",
+          name: "FAQs",
+          miniName: "RS",
+          component: <AccountSettings />,
+          layout: "/admin",
+          isTop: true,
+        },
+        {
+          path: "/security",
+          name: "FAQs",
+          miniName: "RS",
+          component: <Login_Security />,
           layout: "/admin",
           isTop: true,
         },

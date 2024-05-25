@@ -341,7 +341,7 @@ const NavbarComponent = () => {
                   <Link className="dropdown-item d-flex align-items-center" to="/personal_information">Personal Information</Link>
                   </li>
                   <li className="mt-3">
-                    <a className="dropdown-item d-flex align-items-center" href="#">Account Settings</a>
+                  <Link className="dropdown-item d-flex align-items-center" to="/account_settings">Account Settings</Link>
                   </li>
                   <li className="mt-3">
                   <Link className="dropdown-item d-flex align-items-center" to="/gift_card">Gift Cards</Link>
