@@ -9,10 +9,10 @@ export const URLs = {
     SIGN_UP: "register",
     SIGN_UP_SEND_OTP: "auth/signup/send_otp",
     SIGN_UP_VERIFY_OTP: "auth/signup/verify_otp",
-  
+    USER_INFO:"user/user",
     //Contact-us
     Contact_Us : "auth/contact_us",
-  
+    Get_Currency:"location/currencies",
     //Forgot Password
     FORGOT_PASSWORD: "auth/forgot_password",
     RESET_PASSWORD: "auth/reset_password",
@@ -20,7 +20,8 @@ export const URLs = {
     MANAGE_PROVIDER_PROFILE: "auth/update_profile",
     UPDATE_SPONSOR_PROFILE: "auth/update_sponsor_profile",
     GET_PROVIDER_PROFILE: "auth/get_profile",
-  
+
+    GET_COUNTRY:"location/country",
     //Filters
     GET_PROVIDER_NAMES: "provider",
     GET_RFI_TYPES: "rfi",

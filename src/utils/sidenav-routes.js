@@ -9,6 +9,9 @@ import Notifications from "../views/Notification";
 import BookingConfirmation from "../views/Booking/BookingConfirmation";
 import AccountSettings from "../views/My Profile/Account-Settings/AccountSettings";
 import Login_Security from "../views/My Profile/Account-Settings/Login";
+import Inbox from "../views/HostLayout/Inbox/Inbox";
+ 
+
 const useSideNavRoutes = () => {
   return [
     {
@@ -43,7 +46,7 @@ const useSideNavRoutes = () => {
           isTop: true,
         },
         {
-          path: "/notications",
+          path: "/notifications",
           name: "FAQs",
           miniName: "RS",
           component: <Notifications />,
@@ -63,6 +66,14 @@ const useSideNavRoutes = () => {
           name: "FAQs",
           miniName: "RS",
           component: <GiftCards />,
+          layout: "/admin",
+          isTop: true,
+        },
+        {
+          path: "/host_inbox",
+          name: "FAQs",
+          miniName: "RS",
+          component: <Inbox />,
           layout: "/admin",
           isTop: true,
         },

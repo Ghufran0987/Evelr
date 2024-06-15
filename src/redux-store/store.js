@@ -5,6 +5,8 @@ import authReducer from './features/authSlice';
 import postReducer from './features/post/postSlice'
 import categoryReducer from './features/category/categorySlice'
 import notificationReducer from './features/notification/notificationSlice'
+import currencyReducer from './features/currency/currencySlice';
+import countryReducer from './features/country/countrySlice';
 const authPersistConfig = {
   key: 'auth',
   storage: storage,
@@ -17,15 +19,26 @@ const categoryPersistConfig = {
   key: 'category',
   storage: storage,
 };
+const currrencyPersistConfig={
+  key:'currency',
+  storage:storage
+};
+const countryPersistConfig={
+  key:"country",
+  storage:storage
+}
 const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
 const persistPostReducer=persistReducer(postPersistConfig,postReducer)
 const persistedCategoryReducer = persistReducer(categoryPersistConfig, categoryReducer);
-
+const persistedCurrencyReducer=persistReducer(currrencyPersistConfig,currencyReducer);
+const persistedCountryReducer=persistReducer(countryPersistConfig,countryReducer)
 const rootReducer=combineReducers({
   auth: persistedAuthReducer,
   post:persistPostReducer,
   category:persistedCategoryReducer,
-  notification:notificationReducer 
+  notification:notificationReducer,
+  currency:persistedCurrencyReducer,
+  country:persistedCountryReducer
 })
 
 export const store = configureStore({

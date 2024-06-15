@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../assets/css/style.css';
 import '../assets/css/global.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,10 +7,13 @@ import { Route, Router, Routes } from 'react-router-dom';
 import useRoutes from "../utils/routes"
 import NavbarComponent from '../component/Navbar';
 import Footer from '../component/Footer';
-
+import { useSelector } from 'react-redux';
+import Header from '../views/HostLayout/Header';
+import Sidebar from '../views/HostLayout/SideBar';
 function AdminLayout() {
     const routes = useRoutes();
-
+    const [isHost, setIsHost] = useState(false);
+    const{user_type}=useSelector((state)=>state.auth)
     const getCollapseRoutes = (routes) => {
         return routes.map((route) => {
           if (route.collapse) {
@@ -61,15 +64,43 @@ function AdminLayout() {
           </>
         );
       };
+    useEffect(()=>{
+      if(user_type==="host"){
+        setIsHost(true)
+      }
+      else{
+        setIsHost(false)
+      }
+    })
   return (
+  
     <>
-    <NavbarComponent/>
-      <Routes>
-              {getRoutes(routes)}
-              
-      </Routes>
-    <Footer/>
-    </>
+      {isHost ? (
+        <>
+          <Header />
+          <section className='h-dashboard py-3'>
+            <div className="container">
+              <div className="row">
+                <Sidebar />
+                <div className="col-10">
+                  <Routes>
+                    {getRoutes(routes)}
+                  </Routes>
+                </div>
+              </div>
+            </div>
+          </section>
+        </>
+      ) : (
+        <>
+          <NavbarComponent />
+          <Routes>
+            {getRoutes(routes)}
+          </Routes>
+          <Footer />
+        </>
+      )}
+    </ >
   );
 }
 

@@ -19,6 +19,7 @@ function LoginModal({ handleClose, handleLogin }) {
   const [isLoader, setLoader] = useState(false);
   const [login, setLogin] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const { token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   const onSubmit = async (data) => {
@@ -28,7 +29,9 @@ function LoginModal({ handleClose, handleLogin }) {
       if (response) {
         const userData = response.data.response.data.user;
         dispatch(logIn(userData));
+        console.log(userData);
         handleLogin();
+        handleClose();
       }
     } catch (e) {
       dispatch(
@@ -74,7 +77,7 @@ function LoginModal({ handleClose, handleLogin }) {
           </form>
         </Modal.Body>
       </Modal>
-      {login && <Login_TwoStepModal handleClose={handleClose} />}
+      {/* {login && <Login_TwoStepModal handleClose={handleClose} />} */}
     </>
   );
 }

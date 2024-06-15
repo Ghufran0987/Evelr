@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../../assets/css/style.css';
 import '../../assets/css/global.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,7 +7,24 @@ import flatpickr from 'flatpickr';
 import userImage from '../../assets/images/user.png';
 import 'flatpickr/dist/flatpickr.min.css';
 import { Link } from 'react-router-dom';
+import { useSelector,useDispatch } from 'react-redux';
+import { getUserInfo } from '../../redux-store/features/authSlice';
+import { getCountry } from '../../redux-store/features/country/countrySlice';
 const PersonalInformation = () => {
+  const dispatch = useDispatch();
+  const { user_info } = useSelector((state) => state.auth);
+  const { items } = useSelector((state) => state.country);
+
+  useEffect(() => {
+    dispatch(getUserInfo());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getCountry());
+  }, [dispatch]);
+
+  const name = user_info.full_name ? user_info.full_name.split(' ') : ['', ''];
+  
   return (
     <section>
       <div className="container">
@@ -24,6 +41,7 @@ const PersonalInformation = () => {
                   type="text"
                   className="form-control"
                   id="firstName"
+                  value={name?.[0] || ''}
                   placeholder="First Name"
                 />
               </div>
@@ -33,6 +51,7 @@ const PersonalInformation = () => {
                   className="form-control"
                   id="lastName"
                   placeholder="Last Name"
+                  value={name?.[1] || ''}
                 />
               </div>
 
@@ -48,6 +67,7 @@ const PersonalInformation = () => {
                   className="form-control"
                   id="email"
                   placeholder="Email"
+                  value={user_info?.email||''}
                 />
                 <img
                   style={{ position: 'absolute', top: '30%', right: '15px' }}
@@ -77,6 +97,7 @@ const PersonalInformation = () => {
                   className="form-control"
                   id="phoneNumber"
                   placeholder="Phone Number"
+                  value={user_info?.phone||''}
                 />
               </div>
               <div className="col-lg-8 mt-4" style={{ position: 'relative' }}>
@@ -137,6 +158,7 @@ const PersonalInformation = () => {
                   className="form-control"
                   id="AddressLine1"
                   placeholder="Address Line 1"
+                  value={user_info?.address||''}
                 />
               </div>
 

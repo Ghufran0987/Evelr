@@ -91,12 +91,18 @@ import { useNavigate } from "react-router-dom";
 import Loader from "../component/Loader";
 import { getAllPost } from "../redux-store/features/post/postSlice";
 import { useSelector, useDispatch } from "react-redux";
-
+import { getAllCurrency } from "../redux-store/features/currency/currencySlice";
 function Listings({ categoryId }) {
   let navigate = useNavigate();
   const { items, isPostLoading } = useSelector(state => state.post);
   const [numItems, setNumItems] = useState(6); // Initial number of items to display
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllCurrency());
+  }, [dispatch]); // Add dispatch to the dependency array to run only once on mount
+
+  console.log("DropDownCurrency=>", items);
+
 
   const handleCardClick = (id) => {
     navigate(`/listing_details/${id}`);
